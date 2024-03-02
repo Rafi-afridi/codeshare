@@ -37,7 +37,7 @@ def main():
     # Delete file functionality
     if st.button("Delete File"):
         try:
-            os.remove(os.path.join("data", selected_file))
+            os.remove(selected_file)
             st.success(f"File '{selected_file}' deleted successfully!")
         except Exception as e:
             st.error(f"Error deleting file: {e}")
