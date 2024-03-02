@@ -9,14 +9,20 @@ def main():
 
     # Create a dropdown to select a file
     selected_file = st.selectbox("Select a file", files)
-
-    if selected_file:
-        # Read the contents of the selected file
-        with open(selected_file, 'r') as file:
-            file_contents = file.read()
-
-        # Display the contents of the selected file in a text area
-        st.text_area("File Content", file_contents, height=1000)
+    
+    # Password input field
+    password = st.text_input("Enter Password", type="password")
+    
+    if password == "topi":
+        if selected_file:
+            # Read the contents of the selected file
+            with open(selected_file, 'r') as file:
+                file_contents = file.read()
+    
+            # Display the contents of the selected file in a text area
+            st.text_area("File Content", file_contents, height=1000)
+    else:
+        st.write("ENTER Password to show data")
 
 if __name__ == "__main__":
     main()
