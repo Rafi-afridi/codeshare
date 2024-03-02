@@ -16,7 +16,7 @@ def main():
             file_contents = file.read()
 
         # Display the contents of the selected file in a text area
-        st.text_area("File Content", file_contents)
+        st.text_area("File Content", file_contents, height=1000)
 
 if __name__ == "__main__":
     main()
