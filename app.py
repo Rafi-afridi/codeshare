@@ -10,10 +10,9 @@ def main():
     # Create a dropdown to select a file
     selected_file = st.selectbox("Select a file", files)
     
-    # Password input field
-    password = st.text_input("Enter Password", type="password")
+    password = "sleep"
     
-    if password == "topi":
+    if password == "sleep":
         if selected_file:
             # Read the contents of the selected file
             with open(selected_file, 'r') as file:
