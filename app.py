@@ -1,16 +1,27 @@
 import streamlit as st
 import glob
 import os
+import time
 
+def save_to_temp_file(content):
+    with open("temp.txt", "w") as file:
+        file.write(content)
+        
+def read_temp_file():
+    if os.path.exists("temp.txt"):
+        with open("temp.txt", "r") as file:
+            return file.read()
+    return ""
+    
 def main():
     st.title("Jugar Codeshare")
 
     # List all files in the current directory
     files = glob.glob("data/*")
-
+    
     # Create a dropdown to select a file
     selected_file = st.selectbox("Select a file", files)
-    
+        
     # Password input field
     password = st.text_input("Enter Password", type="password")
     
@@ -32,7 +43,7 @@ def main():
             # Display the contents of the selected file in a text area
             st.text_area("File Content", file_contents, height=1000)
     else:
-        st.write("ENTER Password to show data")
+        st.write("Enter password to see code")
     
     # Delete file functionality
     if st.button("Delete File"):
