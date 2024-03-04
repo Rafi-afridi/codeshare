@@ -42,6 +42,10 @@ def main():
     
             # Display the contents of the selected file in a text area
             st.text_area("File Content", file_contents, height=1000)
+            
+            # Download button to download the selected file
+            st.download_button(label="Download File", data=open(selected_file, 'rb'), file_name=os.path.basename(selected_file))
+            
     else:
         st.write("Enter password to see code")
     
