@@ -36,13 +36,16 @@ def main():
         
     if password == "sleep":
         if selected_file:
-            # Read the contents of the selected file
-            with open(selected_file, 'r') as file:
-                file_contents = file.read()
-    
-            # Display the contents of the selected file in a text area
-            st.text_area("File Content", file_contents, height=1000)
             
+            try:
+                # Read the contents of the selected file
+                with open(selected_file, 'r') as file:
+                    file_contents = file.read()
+    
+                # Display the contents of the selected file in a text area
+                st.text_area("File Content", file_contents, height=1000)
+            except:
+                pass
             # Download button to download the selected file
             st.download_button(label="Download File", data=open(selected_file, 'rb'), file_name=os.path.basename(selected_file))
             
