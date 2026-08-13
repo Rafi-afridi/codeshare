@@ -26,7 +26,7 @@ def main():
     password = st.text_input("Enter Password", type="password")
     
     # Upload file functionality
-    uploaded_file = st.file_uploader("Upload a file", type=["txt", "ipynb", "md", "py", "sql", 'docx', 'doc', 'zip', 'csv', 'ppt', 'xlsx', 'xls'])
+    uploaded_file = st.file_uploader("Upload a file", type=["txt", "ipynb", "md", "py", "sql", 'docx', 'doc', 'zip', 'csv', 'ppt', 'pptx', 'xlsx', 'xls'])
 
     if uploaded_file:
         # Save the uploaded file to the data folder with the same extension
